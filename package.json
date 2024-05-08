@@ -4,9 +4,12 @@
   "description": "a simple website for my dogs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tw": "npx tailwindcss -i ./source/scss/main.scss -o ./public/assets/main.css --watch"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  }
 }
