@@ -587,169 +587,186 @@ video {
   padding-right: 0.5rem;
 }
 
-:root{
-  --item-1: 22.5rem;
-  --item-2: 45rem;
-  --item-3: 67.5rem;
+.text-center {
+  text-align: center;
 }
-
-/* Body */
 
 body {
   background: url("/assets/img/pattern.png");
   min-height: 100vh;
   min-height: 100dvh;
-  background-color: #eaeaee;
+  background-color: rgb(213, 213, 213);
 }
-
-/* Base */
 
 .app {
   display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
   min-height: 100vh;
+  flex-direction: column;
 }
 
 .app main {
   flex-grow: 1;
 }
 
-.app footer {
-  background-color: aqua;
-}
-
-/* Sizing */
-
-.box,
-.box-center {
-  padding: 0 1rem;
+.box {
   width: 100%;
-  max-width: var(--item-3);
-  margin: 0 auto;
 }
 
-.box-center{
-  display: flex;
-  justify-content: center;
+@media (min-width: 640px) {
+  .box {
+    max-width: 640px;
+  }
 }
 
-/* Header */
-
-.app-header {
-  background-color: aqua;
+@media (min-width: 768px) {
+  .box {
+    max-width: 768px;
+  }
 }
 
-.app-header .profil-image {
+@media (min-width: 1024px) {
+  .box {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .box {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .box {
+    max-width: 1536px;
+  }
+}
+
+.box {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 48rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.profil-img {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
   display: block;
-  overflow: hidden;
-  height: 9rem;
   width: 9rem;
-  margin: 1.5rem auto .5rem auto;
-  border-radius: 4.5rem;
+  height: 9rem;
+  overflow: hidden;
+  border-radius: 9999px;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.app-header .profil-image img {
+.profil-img img {
+  height: 100%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100%;
-  height: 100%;
 }
 
-.app-header .profil-name {
+.profil-name {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 600;
-  text-align: center;
+  font-weight: 700;
 }
 
-.app-header .profil-location {
+.profil-location {
   font-size: 1.125rem;
   line-height: 1.75rem;
-  font-weight: 500;
-  text-align: center;
+  font-weight: 600;
 }
 
-/* Main */
+/* Recommended */
 
-/* recome grid*/
+.recommended_head {
+  display: inline-flex;
+  background: #e8484d;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  line-height: 3rem;
+  border-radius: 1.5rem;
+  padding: 0 1rem;
+  margin: 1rem 0;
+}
 
-.recom-grid{
+/* Recommended -- GRID */
+
+.recommended_grid {
   display: grid;
-  grid-template-columns: repeat(1, minmax(auto, 25rem));
-  grid-template-rows: repeat(4, 15rem);
-  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 2fr 2fr;
+  gap: 1.5rem;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "friseur friseur hundeliebe"
+    "codeplus instagram hundeliebe";
+  height: auto;
+  min-height: 30rem;
 }
 
-.item {
-  background-color: #fafafa;
-  /* Hintergrundfarbe für die Grid-Items */
-  border: 1px solid #ccc;
-  /* Rand der Grid-Items */
-  padding: 20px;
-  /* Innenabstand */
-  text-align: center;
-  /* Text zentrieren */
-  border-radius: 1rem;
+.grid-1-1,
+.grid-2-1,
+.grid-1-2 {
+  img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+
+.grid-1-1,
+.grid-2-1 {
+  height: 16rem;
+}
+
+.grid-2-1 {
+  height: 33.5rem;
+}
+
+.friseur {
+  grid-area: friseur;
+}
+
+.hundeliebe {
+  grid-area: hundeliebe;
+}
+
+.instagram {
+  grid-area: instagram;
+}
+
+.codeplus {
+  grid-area: codeplus;
+}
+
+.friseur,
+.hundeliebe,
+.instagram,
+.codeplus {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 2.5rem;
-}
-
-picture{
-  display: block;
-  margin: 0 auto;
   height: 100%;
-  width: 100%;
+  --tw-rotate: -2deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  flex-direction: column;
+  justify-content: center;
+  background:#fff;
+  border-radius: 1.5rem;
+  overflow: hidden;
 }
 
-.item img,
-.item picture img
-{
-  max-height: 100%;
-  max-width: 100%;
-}
-
-@media (min-width: 45rem) {
-  .recom-grid{
-    grid-template-columns: repeat(2, minmax(auto, 25rem));
-    grid-template-rows: repeat(2, 17rem);
-  }
-}
-
-@media (min-width: 67.5rem) {
-  .recom-grid{
-    grid-template-columns: repeat(3, minmax(auto, 25rem));
-    grid-template-rows: repeat(2, 19rem);
-    .col-2{
-      grid-column: span 2;
-    }
-    .row-2{
-      grid-row: span 2;
-    }
-  }
-}
-
-/*
-@media (min-width: 30rem) {
-  .col-2{
-    grid-column: span 2;
-  }
-  
-  .row-2{
-    grid-row: span 2;
-  }
-}
-*/
-
-/* util */
-
-img {
-  pointer-events: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+.ch-btn-1 {
+  height: 2rem;
+  background: rgb(31, 31, 31);
+  color: #fff;
+  border-radius: 10rem;
+  padding: 0 1.25rem;
 }
